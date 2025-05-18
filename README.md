@@ -1,4 +1,4 @@
-###Parking Lot System (LLD)
+### Parking Lot System (LLD)
 
 🧩 Low-Level Design Diagram (LLD)
 The architecture of the Parking Lot System is visualized using an LLD Class Diagram created with Excalidraw:
@@ -91,9 +91,9 @@ ParkingLot.parkVehicle(vehicle);
 Assumes a single parking lot globally. Can be converted to instance-based for multi-lot support.
 
 10. ✅ Layered Architecture (Conceptual)
-| Layer          | Responsibility                                       |
+```| Layer          | Responsibility                                       |
 | -------------- | ---------------------------------------------------- |
-| Input          | `index.js` CLI using `prompt-sync`                   |
-| Controller     | `EntranceGate.js`                                    |
-| Business Logic | `ParkingLot.js`, `ParkingFloor.js`, `ParkingSpot.js` |
-| Data Models    | `Vehicle.js`, `Ticket.js`                            |
+|* Input          | `index.js` CLI using `prompt-sync`                   |
+|* Controller     | `EntranceGate.js`                                    |
+|* Business Logic | `ParkingLot.js`, `ParkingFloor.js`, `ParkingSpot.js` |
+|* Data Models    | `Vehicle.js`, `Ticket.js`                            |```
