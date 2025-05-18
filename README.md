@@ -1,9 +1,9 @@
-*** Parking Lot System (LLD) ***
+###Parking Lot System (LLD)
 
 🧩 Low-Level Design Diagram (LLD)
 The architecture of the Parking Lot System is visualized using an LLD Class Diagram created with Excalidraw:
 
-📌 🔗 View and Edit LLD Diagram on Excalidraw : [ https://excalidraw.com/#json=_8tnYCskZJPjjsgLBhFDO,uihC7HPEc-wjCosErRk7Bw ]
+📌 🔗 LLD Diagram on Excalidraw : [ https://excalidraw.com/#json=_8tnYCskZJPjjsgLBhFDO,uihC7HPEc-wjCosErRk7Bw ]
  
 
 📷 Embedded Diagram
@@ -25,9 +25,9 @@ This project implements a fully modular Parking Lot System in Node.js, following
 
 1. ✅ Single Responsibility Principle (SRP)
 Each class has one clear purpose:
-***EntranceGate.js: Handles vehicle entry.***
-***Vehicle.js, Car.js, Bike.js: Represent vehicles with their fee logic.***
-***ParkingSpot.js, CarParkingSpot.js, BikeParkingSpot.js: Handle parking spot state and operations.***
+* EntranceGate.js: Handles vehicle entry.
+* Vehicle.js, Car.js, Bike.js: Represent vehicles with their fee logic.
+* ParkingSpot.js, CarParkingSpot.js, BikeParkingSpot.js: Handle parking spot state and operations.
 
 2. ✅ Factory Design Pattern
 Used in: VehicleFactory.js
@@ -39,15 +39,15 @@ Why? So new vehicle types (e.g., Truck) can be added without modifying gate logi
 
 3. ✅ Inheritance & Polymorphism
 Vehicle is the abstract base class.
-***Car, Bike extend Vehicle and implement calculateFee(hoursStayed)***
-***ParkingSpot base class is extended by CarParkingSpot, BikeParkingSpot.***
-***Allows uniform handling of vehicles/spots with custom logic.***
+* Car, Bike extend Vehicle and implement calculateFee(hoursStayed
+* ParkingSpot base class is extended by CarParkingSpot, BikeParkingSpot
+* Allows uniform handling of vehicles/spots with custom logic
 
 4. ✅ Composition Over Inheritance
-***ParkingLot has multiple ParkingFloors.***
-***ParkingFloor has multiple ParkingSpots.***
-***ParkingSpot holds a Vehicle when occupied.***
-***Models real-world relationships using "has-a" over "is-a".***
+* ParkingLot has multiple ParkingFloors.
+* ParkingFloor has multiple ParkingSpots.
+* ParkingSpot holds a Vehicle when occupied.
+* Models real-world relationships using "has-a" over "is-a".
 
 5. ✅ Encapsulation
 ParkingSpot handles its own internal state:
@@ -61,8 +61,8 @@ State like occupied or vehicle is not manipulated directly from outside.
 6. ✅ Delegation
 Responsibilities are delegated:
 
-***EntranceGate delegates parking logic to ParkingLot.***
-***ParkingLot delegates spot searching to ParkingFloor.***
+* EntranceGate delegates parking logic to ParkingLot.
+* ParkingLot delegates spot searching to ParkingFloor.
 
 This keeps code modular and responsibilities cleanly separated.
 
@@ -77,8 +77,8 @@ Ensures only child classes (Car, Bike) are used directly.
 
 8. ✅ Open-Closed Principle (OCP)
 Easily extendable without changing existing code:
-**Add a new vehicle type: just extend Vehicle**
-**Add a new floor: use ParkingLot.addFloor()**
+* Add a new vehicle type: just extend Vehicle
+* Add a new floor: use ParkingLot.addFloor()
 
 9. ✅ Static vs Instance Design
 ParkingLot uses static methods and properties to mimic a singleton:
