@@ -5,6 +5,7 @@ const Car = require('./models/vehicles/car');
 const Bike = require('./models/vehicles/Bike');
 const PaymentService = require('./models/payments/paymentService');
 const TicketService = require('./models/parking/Ticket'); // if you created it
+const { log, saveLogsToFile } = require('./logger');
 
 const prompt = require('prompt-sync')();
 
@@ -23,10 +24,10 @@ async function main() {
 
   // Main loop: simulate entrance and exit
   while (true) {
-    console.log('\nChoose an action:');
-    console.log('1. Vehicle Entry');
-    console.log('2. Vehicle Exit');
-    console.log('3. Exit Application');
+    log('\nChoose an action:');
+    log('1. Vehicle Entry');
+    log('2. Vehicle Exit');
+    log('3. Exit Application');
     const choice = prompt('Enter choice (1-3): ');
 
     if (choice === '1') {
@@ -38,12 +39,14 @@ async function main() {
       const hoursStayed = parseInt(prompt('Enter hours stayed: '), 10);
       exitGate.processExit(spotNumber, hoursStayed);
     } else if (choice === '3') {
-      console.log('Exiting app...');
+      log('Exiting app...');
       break;
     } else {
-      console.log('Invalid choice! Try again.');
+      log('Invalid choice! Try again.');
     }
   }
 }
 
 main();
+saveLogsToFile();
+

@@ -1,0 +1,24 @@
+{
+  "logs": [
+    "\nChoose an action:",
+    "1. Vehicle Entry",
+    "2. Vehicle Exit",
+    "3. Exit Application",
+    "✅ Vehicle parked successfully in spot: 1",
+    "\nChoose an action:",
+    "1. Vehicle Entry",
+    "2. Vehicle Exit",
+    "3. Exit Application",
+    "Spot vacated successfully!",
+    "\nChoose an action:",
+    "1. Vehicle Entry",
+    "2. Vehicle Exit",
+    "3. Exit Application",
+    "✅ Vehicle parked successfully in spot: 2",
+    "\nChoose an action:",
+    "1. Vehicle Entry",
+    "2. Vehicle Exit",
+    "3. Exit Application",
+    "Exiting app..."
+  ]
+}
